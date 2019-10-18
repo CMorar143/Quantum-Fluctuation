@@ -13,3 +13,13 @@ Despite QM being the description of the fundamental nature of reality, it comes 
 ## Goal of This Project
 
 The goal of this project is to create a visualisation of quantum flucations. QM tells us that empty space is not in fact empty. It's actually a bubbling bath of matter particles and their anti-mater counterparts popping in and out of existence. I aim to create a visualisation of this using the unity game engine.
+
+
+## Extra Research
+
+A lot of research went into the formation of this idea. A rough idea of what the project will look like can be seen in [this video at 3:00 minutes](https://youtu.be/_DXHrp6-LZI?t=163)
+
+
+## Conclusion
+
+Overall I am very excited to get started on this project for two main reasons. Firstly, I am excited to see what I can learn from this project about using the Unity game engine. But secondly and equally as important, I have always had a huge interest in physics and game development and I am very happy to have an opportunity to unify these two passions of mine.
