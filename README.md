@@ -15,9 +15,9 @@ Despite QM being the description of the fundamental nature of reality, it comes 
 The goal of this project is to create a visualisation of quantum flucations. QM tells us that empty space is not in fact empty. It's actually a bubbling bath of matter particles and their anti-mater counterparts popping in and out of existence. I aim to create a visualisation of this using the unity game engine.
 
 
-### Extra Research
+### What Will it Look Like?
 
-A lot of research went into the formation of this idea. A rough idea of what the project will look like can be seen in [this video at 3:00 minutes](https://youtu.be/_DXHrp6-LZI?t=163)
+A rough idea of what the project will look like can be seen in [this video at 3:00 minutes](https://youtu.be/_DXHrp6-LZI?t=163) However, instead of simple particles appearing randomly throughout the screen I plan on showing the creation and annihilation of the matter and anti-matter particles along with the procedurally generated quantum foam.
 
 
 ### Conclusion
