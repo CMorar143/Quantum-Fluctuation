@@ -7,7 +7,7 @@ public class ParticleBehaviour : MonoBehaviour
     public GameObject Matter, AntiMatter;
     private Transform startMarker;
     private Transform endMarker;
-    private float speed = 1.0f;
+    private float velocity = 0.2f; 
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,6 @@ public class ParticleBehaviour : MonoBehaviour
 
     public void MoveParticles()
     {
-        this.GetComponent<Rigidbody>().AddForce(0, 0.5f, 0, ForceMode.Impulse);
         Matter.GetComponent<Rigidbody>().AddForce(1, 0, 0, ForceMode.Impulse);
         AntiMatter.GetComponent<Rigidbody>().AddForce(-1, 0, 0, ForceMode.Impulse);
     }
@@ -27,5 +26,6 @@ public class ParticleBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Translate(Vector3.up * velocity * Time.deltaTime);
     }
 }
