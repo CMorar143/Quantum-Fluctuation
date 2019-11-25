@@ -5,15 +5,11 @@ using UnityEngine;
 public class ParticleBehaviour : MonoBehaviour
 {
     public GameObject Matter, AntiMatter;
-    private Transform startMarker;
-    private Transform endMarker;
     private float velocity = 0.2f; 
 
     // Start is called before the first frame update
     void Start()
     {
-        startMarker = endMarker = this.transform;
-        //endMarker.position += new Vector3(0, 4);
         Invoke("MoveParticles", 1);
     }
 
