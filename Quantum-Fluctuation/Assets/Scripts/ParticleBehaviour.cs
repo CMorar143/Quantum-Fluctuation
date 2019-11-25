@@ -5,7 +5,8 @@ using UnityEngine;
 public class ParticleBehaviour : MonoBehaviour
 {
     public GameObject Matter, AntiMatter;
-    private float velocity = 0.2f; 
+    private float velocity = 0.2f;
+    private float impulseForce = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +16,8 @@ public class ParticleBehaviour : MonoBehaviour
 
     public void MoveParticles()
     {
-        Matter.GetComponent<Rigidbody>().AddForce(1, 0, 0, ForceMode.Impulse);
-        AntiMatter.GetComponent<Rigidbody>().AddForce(-1, 0, 0, ForceMode.Impulse);
+        Matter.GetComponent<Rigidbody>().AddForce(impulseForce, 0, 0, ForceMode.Impulse);
+        AntiMatter.GetComponent<Rigidbody>().AddForce(-impulseForce, 0, 0, ForceMode.Impulse);
     }
 
     // Update is called once per frame
