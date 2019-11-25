@@ -16,24 +16,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = this.speed;
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            Fly(Time.deltaTime * speed);
-        }
-
-        if (Input.GetKey(KeyCode.F))
-        {
-            Fly(-Time.deltaTime * speed);
-        }
-
+        //float speed = this.speed;
         transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed);
         transform.Rotate(0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0f);
-    }
 
-    void Fly(float units)
-    {
-        transform.position += Vector3.up * units;
+        // Go higher
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.position += Vector3.up * Time.deltaTime * speed;
+        }
+
+        // Go lower
+        if (Input.GetKey(KeyCode.F))
+        {
+            transform.position += Vector3.up * -Time.deltaTime * speed;
+        }
     }
 }
