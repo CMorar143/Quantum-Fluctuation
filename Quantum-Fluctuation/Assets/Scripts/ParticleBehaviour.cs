@@ -16,8 +16,8 @@ public class ParticleBehaviour : MonoBehaviour
 
     public void MoveParticles()
     {
-        Matter.GetComponent<Rigidbody>().AddForce(impulseForce, 0, 0, ForceMode.Impulse);
-        AntiMatter.GetComponent<Rigidbody>().AddForce(-impulseForce, 0, 0, ForceMode.Impulse);
+        Matter.GetComponent<Rigidbody>().AddRelativeForce(impulseForce, 0, 0, ForceMode.Impulse);
+        AntiMatter.GetComponent<Rigidbody>().AddRelativeForce(-impulseForce, 0, 0, ForceMode.Impulse);
     }
 
     // Update is called once per frame
