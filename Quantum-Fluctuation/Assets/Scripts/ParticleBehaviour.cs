@@ -32,6 +32,5 @@ public class ParticleBehaviour : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         Matter.gameObject.tag = "matter";
-        Debug.Log("added tag");
     }
 }
