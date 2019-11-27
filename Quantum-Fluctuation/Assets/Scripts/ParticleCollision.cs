@@ -21,8 +21,8 @@ public class ParticleCollision : MonoBehaviour
         if (collision.gameObject.tag == "matter")
         {
             Debug.Log("collision");
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            // Pop out of existence
+            Destroy(transform.parent.gameObject);
         }
     }
 }
