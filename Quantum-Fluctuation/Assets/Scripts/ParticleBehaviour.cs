@@ -18,11 +18,20 @@ public class ParticleBehaviour : MonoBehaviour
     {
         Matter.GetComponent<Rigidbody>().AddRelativeForce(impulseForce, 0, 0, ForceMode.Impulse);
         AntiMatter.GetComponent<Rigidbody>().AddRelativeForce(-impulseForce, 0, 0, ForceMode.Impulse);
+        StartCoroutine(AddTag(0.2f));
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.up * velocity * Time.deltaTime);
+    }
+
+    IEnumerator AddTag(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        Matter.gameObject.tag = "matter";
+        Debug.Log("added tag");
     }
 }
