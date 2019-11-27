@@ -11,7 +11,7 @@ public class ParticleBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("MoveParticles", 1);
+        MoveParticles();
     }
 
     public void MoveParticles()
