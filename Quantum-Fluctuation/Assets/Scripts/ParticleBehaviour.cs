@@ -12,13 +12,13 @@ public class ParticleBehaviour : MonoBehaviour
     void Start()
     {
         MoveParticles();
+        StartCoroutine(AddTag(0.2f));
     }
 
     public void MoveParticles()
     {
         Matter.GetComponent<Rigidbody>().AddRelativeForce(impulseForce, 0, 0, ForceMode.Impulse);
         AntiMatter.GetComponent<Rigidbody>().AddRelativeForce(-impulseForce, 0, 0, ForceMode.Impulse);
-        StartCoroutine(AddTag(0.2f));
     }
 
     // Update is called once per frame
