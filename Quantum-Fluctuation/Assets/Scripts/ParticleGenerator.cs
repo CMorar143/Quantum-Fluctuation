@@ -16,8 +16,11 @@ public class ParticleGenerator : MonoBehaviour
     {
         while (true)
         {
+            Transform newParticle = transform;
+            //newParticle.Rotate(0, Random.Range(-25.0f, 25.0f), Random.Range(-25.0f, 25.0f));
+
             // Pop into existence
-            Instantiate(particles, new Vector3(transform.position.x + Random.Range(-0.3f, 0.3f), Random.Range(-0.2f, 0.2f), transform.position.z), transform.rotation);
+            Instantiate(particles, new Vector3(transform.position.x + Random.Range(-0.3f, 0.3f), Random.Range(-0.2f, 0.2f), transform.position.z), newParticle.rotation);
             yield return new WaitForSeconds(2.0f);
         }
     }
