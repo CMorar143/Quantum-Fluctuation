@@ -26,16 +26,13 @@ public class ParticleGenerator : MonoBehaviour
             Instantiate(
                 particles, 
                 new Vector3(
-                    transform.position.x + Random.Range(-0.3f, 0.3f), 
-                    0, //transform.position.y + Random.Range(-0.2f, 0.2f), 
+                    transform.position.x + Random.Range(-0.3f, 0.3f),
+                    0,
                     transform.position.z
                     ), 
                 newParticle.rotation
             );
 
-            //GameObject fluctuation = GameObject.Instantiate<GameObject>(particles);
-            //fluctuation.transform.position = transform.position;// + new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.2f, 0.2f), 0);
-            //fluctuation.transform.rotation = transform.rotation;
             yield return new WaitForSeconds(2.0f);
         }
     }
