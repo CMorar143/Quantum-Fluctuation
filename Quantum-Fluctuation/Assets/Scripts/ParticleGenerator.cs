@@ -50,7 +50,11 @@ public class ParticleGenerator : MonoBehaviour
                 newParticle.rotation
             );
 
-            //transform.rotation = transform.parent.transform.rotation;
+            // Doesn't seem to work
+            //GameObject p = (GameObject)Instantiate<GameObject>(particles);
+            //p.transform.SetParent(transform);
+
+            transform.rotation = transform.parent.transform.rotation;
 
             yield return new WaitForSeconds(freq);
         }
