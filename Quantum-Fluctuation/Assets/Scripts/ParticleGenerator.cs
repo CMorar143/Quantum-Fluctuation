@@ -6,6 +6,7 @@ public class ParticleGenerator : MonoBehaviour
 {
     public GameObject particles;
     private Transform newParticle;
+    public float freq = 0.8f;
 
     void Start()
     {
@@ -33,7 +34,7 @@ public class ParticleGenerator : MonoBehaviour
                 newParticle.rotation
             );
 
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(freq);
         }
     }
 }
