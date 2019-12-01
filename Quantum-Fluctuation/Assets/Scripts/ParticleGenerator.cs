@@ -10,6 +10,7 @@ public class ParticleGenerator : MonoBehaviour
     //private Quaternion rotUp;
     //private Quaternion rotForward;
     //private Quaternion rotRight;
+    Vector3 rot;
 
     void Start()
     {
@@ -18,13 +19,17 @@ public class ParticleGenerator : MonoBehaviour
         StartCoroutine("CreateParticles");
     }
 
+    private void Update()
+    {
+
+    }
+
     IEnumerator CreateParticles()
     {
         while (true)
         {
-
-            Vector3 rot = new Vector3(0, Random.Range(-25.0f, 25.0f), Random.Range(-120f, 120.0f));
-            newParticle.Rotate(rot, Space.World);
+            rot = new Vector3(0, 0, Random.Range(-35.0f, 35.0f));
+            newParticle.Rotate(rot, Space.Self);
 
             //rotUp = Quaternion.AngleAxis(Random.Range(-25.0f, 25.0f), Vector3.up);
             //rotForward = Quaternion.AngleAxis(Random.Range(-75.0f, 75.0f), Vector3.forward);
@@ -44,7 +49,8 @@ public class ParticleGenerator : MonoBehaviour
                     ),
                 newParticle.rotation
             );
-            transform.rotation = transform.parent.transform.rotation;
+
+            //transform.rotation = transform.parent.transform.rotation;
 
             yield return new WaitForSeconds(freq);
         }
