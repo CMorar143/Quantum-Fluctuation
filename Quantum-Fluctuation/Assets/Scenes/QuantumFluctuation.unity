@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 7337183472554789571, guid: 3086c4cf84cdd0f49bf76e1bbe1437f6,
     type: 3}
+  freq: 2
 --- !u!1 &574917712
 GameObject:
   m_ObjectHideFlags: 0
