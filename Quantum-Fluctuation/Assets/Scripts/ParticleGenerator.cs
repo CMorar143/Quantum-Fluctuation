@@ -7,9 +7,6 @@ public class ParticleGenerator : MonoBehaviour
     public GameObject particles;
     private Transform newParticle;
     public float freq = 0.8f;
-    //private Quaternion rotUp;
-    //private Quaternion rotForward;
-    //private Quaternion rotRight;
     Vector3 rot;
 
     void Start()
