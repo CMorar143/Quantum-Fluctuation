@@ -61,7 +61,6 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
-
         this.transform.position = player.position + new Vector3(-xSize / 2, -3f, -zSize / 2);
     }
 
@@ -119,7 +118,5 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
-
-        this.transform.position = player.position + new Vector3(-xSize / 2, -3f, -zSize / 2);
     }
 }
