@@ -120,5 +120,6 @@ public class MeshGenerator : MonoBehaviour
         mesh.RecalculateNormals();
         //transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed);
         offsetX += Time.deltaTime * Input.GetAxis("Vertical") * 5f;
+        offsetZ += Time.deltaTime * -Input.GetAxis("Horizontal") * 5f;
     }
 }

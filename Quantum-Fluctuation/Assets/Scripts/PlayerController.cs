@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         //float speed = this.speed;
         //transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed);
-        transform.Rotate(0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0f);
+        //transform.Rotate(0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0f);
 
         // Go higher
         if (Input.GetKey(KeyCode.E))
