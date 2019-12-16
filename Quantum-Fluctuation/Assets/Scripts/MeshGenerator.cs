@@ -31,17 +31,23 @@ public class MeshGenerator : MonoBehaviour
         }
 
         triangles = new int[xSize * zSize * 6];
-        for (int tris = 0, verts = 0, x = 0; x < xSize; x++)
+
+        for (int tris = 0, verts = 0, z = 0; z < zSize; z++)
         {
-            triangles[0 + tris] = verts + 0;
-            triangles[1 + tris] = verts + xSize + 1;
-            triangles[2 + tris] = verts + 1;
-            triangles[3 + tris] = verts + 1;
-            triangles[4 + tris] = verts + xSize + 1;
-            triangles[5 + tris] = verts + xSize + 2;
+            for (int x = 0; x < xSize; x++)
+            {
+                triangles[0 + tris] = verts + 0;
+                triangles[1 + tris] = verts + xSize + 1;
+                triangles[2 + tris] = verts + 1;
+                triangles[3 + tris] = verts + 1;
+                triangles[4 + tris] = verts + xSize + 1;
+                triangles[5 + tris] = verts + xSize + 2;
+
+                verts++;
+                tris += 6;
+            }
 
             verts++;
-            tris += 6;
         }
 
         // Just for one quad
