@@ -12,22 +12,26 @@ public class MeshGenerator : MonoBehaviour
 
     public int xSize = 20;
     public int zSize = 20;
-
+    public float offsetX;
+    public float offsetZ;
 
     // Start is called before the first frame update
     void Start()
     {
+        offsetX = Random.Range(0f, 9999f);
+        offsetZ = Random.Range(0f, 9999f);
+
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
 
-        for (int v = 0, i = 0; i <= zSize; i++)
+        for (int v = 0, z = 0; z <= zSize; z++)
         {
-            for (int j = 0; j <= xSize; j++)
+            for (int x = 0; x <= xSize; x++)
             {
-                float y = Mathf.PerlinNoise(i * 0.3f, j * 0.3f) * 2f;
-                vertices[v] = new Vector3(j, y, i);
+                float y = Mathf.PerlinNoise(z * 0.3f + offsetZ, x * 0.3f + offsetX) * 2f;
+                vertices[v] = new Vector3(x, y, z);
                 v++;
             }
         }
@@ -95,10 +99,10 @@ public class MeshGenerator : MonoBehaviour
         // TODO Generate mesh in front
         // Set the camera in the middle of mesh
         // Check if the camera is getting close to any edge
-            // Generate in front
-            // Delete what's behind
+        // Generate in front
+        // Delete what's behind
         // else
-            // Do nothing and allow the camera to move freely
+        // Do nothing and allow the camera to move freely
 
 
     }
