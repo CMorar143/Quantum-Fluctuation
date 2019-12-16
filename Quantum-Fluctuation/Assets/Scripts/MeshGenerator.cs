@@ -16,7 +16,12 @@ public class MeshGenerator : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
-        //vertices = 
+        vertices = new Vector3[]
+        {
+            new Vector3 (0,0,0),
+            new Vector3 (0,0,1),
+            new Vector3 (1,0,0)
+        };
     }
 
     // Update is called once per frame
