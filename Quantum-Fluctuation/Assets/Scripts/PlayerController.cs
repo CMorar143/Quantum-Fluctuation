@@ -17,14 +17,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //float speed = this.speed;
-        //transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed);
-        //transform.Rotate(0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0f);
+        transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed);
+        transform.Rotate(0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0f);
 
         // Go higher
-        if (Input.GetKey(KeyCode.E))
-        {
-            transform.position += Vector3.up * Time.deltaTime * speed;
-        }
+        //if (Input.GetKey(KeyCode.E))
+        //{
+        //    transform.position += Vector3.up * Time.deltaTime * speed;
+        //}
 
         // Go lower
         if (Input.GetKey(KeyCode.F))
