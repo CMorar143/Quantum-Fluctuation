@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MeshGenerator : MonoBehaviour
 {
+    public Transform player;
     Mesh mesh;
 
     Vector3[] vertices;
@@ -87,6 +88,6 @@ public class MeshGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        this.transform.position = player.position + new Vector3(-xSize/2, -2f, -zSize/2);
     }
 }
