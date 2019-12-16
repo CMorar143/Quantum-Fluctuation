@@ -21,11 +21,12 @@ public class MeshGenerator : MonoBehaviour
 
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
 
-        for (int i = 0; i <= zSize; i++)
+        for (int v = 0, i = 0; i <= zSize; i++)
         {
             for (int j = 0; j <= xSize; j++)
             {
-
+                vertices[v] = new Vector3(j, 0, i);
+                v++;
             }
         }
 
