@@ -72,6 +72,8 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
+
+        this.transform.position = player.position + new Vector3(-xSize / 2, -3f, -zSize / 2);
     }
 
     //private void OnDrawGizmos()
@@ -88,6 +90,16 @@ public class MeshGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = player.position + new Vector3(-xSize/2, -2f, -zSize/2);
+        //this.transform.position = player.position + new Vector3(-xSize/2, -3f, -zSize/2);
+
+        // TODO Generate mesh in front
+        // Set the camera in the middle of mesh
+        // Check if the camera is getting close to any edge
+            // Generate in front
+            // Delete what's behind
+        // else
+            // Do nothing and allow the camera to move freely
+
+
     }
 }
