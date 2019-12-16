@@ -30,6 +30,11 @@ public class MeshGenerator : MonoBehaviour
             }
         }
 
+        triangles = new int[3];
+        triangles[0] = 0;
+        triangles[1] = xSize + 1;
+        triangles[2] = 1;
+
         // Just for one quad
         //vertices = new Vector3[]
         //{
