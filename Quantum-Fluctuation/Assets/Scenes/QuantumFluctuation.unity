@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  rotSpeed: 65
+  rotSpeed: 30
   xAngle: 0
   yAngle: 0
   zAngle: 0
