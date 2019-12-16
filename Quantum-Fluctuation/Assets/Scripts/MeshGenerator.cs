@@ -9,6 +9,9 @@ public class MeshGenerator : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
 
+    public int xSize = 20;
+    public int zSize = 20;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,19 +19,30 @@ public class MeshGenerator : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
-        vertices = new Vector3[]
-        {
-            new Vector3 (0,0,0),
-            new Vector3 (0,0,1),
-            new Vector3 (1,0,0),
-            new Vector3 (1,0,1)
-        };
+        vertices = new Vector3[(xSize + 1) * (zSize + 1)];
 
-        triangles = new int[]
+        for (int i = 0; i <= zSize; i++)
         {
-            0, 1, 2,
-            1, 3, 2
-        };
+            for (int j = 0; j <= xSize; j++)
+            {
+
+            }
+        }
+
+        // Just for one quad
+        //vertices = new Vector3[]
+        //{
+        //    new Vector3 (0,0,0),
+        //    new Vector3 (0,0,1),
+        //    new Vector3 (1,0,0),
+        //    new Vector3 (1,0,1)
+        //};
+
+        //triangles = new int[]
+        //{
+        //    0, 1, 2,
+        //    1, 3, 2
+        //};
 
         mesh.Clear();
         mesh.vertices = vertices;
