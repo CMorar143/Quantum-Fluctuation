@@ -118,5 +118,7 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
+        //transform.Translate(0f, 0f, Input.GetAxis("Vertical") * Time.deltaTime * speed);
+        offsetX += Time.deltaTime * Input.GetAxis("Vertical") * 5f;
     }
 }
