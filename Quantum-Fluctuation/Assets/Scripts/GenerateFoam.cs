@@ -22,7 +22,6 @@ public class GenerateFoam : MonoBehaviour
         mesh.vertices = verts;
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
-        this.gameObject.AddComponent<MeshCollider>();
     }
 
     // Update is called once per frame
