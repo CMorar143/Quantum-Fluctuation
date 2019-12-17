@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class Plane
+class Foam
 {
-    GameObject plane;
+    public GameObject plane;
     public float creationTime;
 
-    public Plane(GameObject p, float ct)
+    public Foam(GameObject p, float ct)
     {
         plane = p;
         creationTime = ct;
@@ -20,8 +20,8 @@ public class GenerateInfinite : MonoBehaviour
     public GameObject player;
 
     int foamSize = 10;
-    int halfPlanesX = 10;
-    int halfPlanesZ = 10;
+    int halfPlanesX = 5;
+    int halfPlanesZ = 5;
 
     Vector3 startPos;
 
@@ -33,6 +33,8 @@ public class GenerateInfinite : MonoBehaviour
         this.gameObject.transform.position = Vector3.zero;
         startPos = Vector3.zero;
 
+        // Timestamp each newly created plane or update the timestamp
+        // of a plane that's still in range
         float updateTime = Time.realtimeSinceStartup;
 
         for (int x = -halfPlanesX; x < halfPlanesX; x++)
@@ -45,7 +47,7 @@ public class GenerateInfinite : MonoBehaviour
 
                 string planeName = "PLane_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
                 p.name = planeName;
-                Plane plane = new Plane(p, updateTime);
+                Foam plane = new Foam(p, updateTime);
                 planes.Add(planeName, plane);
             }
         }
@@ -75,16 +77,38 @@ public class GenerateInfinite : MonoBehaviour
                     {
                         GameObject p = (GameObject)Instantiate(foam, pos, Quaternion.identity);
                         p.name = planeName;
-                        Plane plane = new Plane(p, updateTime);
+                        Foam plane = new Foam(p, updateTime);
                         planes.Add(planeName, plane);
                     }
 
                     else
                     {
-                        (planes[planeName] as Plane).creationTime = updateTime;
+                        (planes[planeName] as Foam).creationTime = updateTime;
                     }
                 }
             }
+
+            // Destroy all planes that have outdated timestamps
+            // Put valid planes in a hashtable
+            Hashtable newFoam = new Hashtable();
+            foreach(Foam pl in planes.Values)
+            {
+                if(pl.creationTime != updateTime)
+                {
+                    // Delete plane
+                    Destroy(pl.plane);
+                }
+
+                else
+                {
+                    newFoam.Add(pl.plane.name, pl);
+                }
+            }
+
+            // Copy new hashtable contents to the working hashtable
+            planes = newFoam;
+
+            startPos = player.transform.position;
         }
     }
 }
