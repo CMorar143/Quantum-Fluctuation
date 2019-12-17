@@ -21,10 +21,10 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0f, Input.GetAxis("Horizontal") * Time.deltaTime * rotSpeed, 0f);
 
         // Go higher
-        //if (Input.GetKey(KeyCode.E))
-        //{
-        //    transform.position += Vector3.up * Time.deltaTime * speed;
-        //}
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.position += Vector3.up * Time.deltaTime * speed;
+        }
 
         // Go lower
         if (Input.GetKey(KeyCode.F))
