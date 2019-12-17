@@ -51,7 +51,7 @@ public class MeshGenerator : MonoBehaviour
                 Mesh m = CreateMesh();
             }
         }
-        
+
         this.transform.position = player.position + new Vector3(-xSize / 2, -3f, -zSize / 2);
     }
 
