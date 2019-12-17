@@ -43,7 +43,10 @@ public class GenerateInfinite : MonoBehaviour
 
                 GameObject p = (GameObject)Instantiate(foam, pos, Quaternion.identity);
 
-                string planeName = "PLane_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString());
+                string planeName = "PLane_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
+                p.name = planeName;
+                Plane plane = new Plane(p, updateTime);
+                planes.Add(planeName, plane);
             }
         }
     }
