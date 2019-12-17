@@ -2,18 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class Grid
-{
-    private GameObject meshGrid;
-    private float creationTime;
-
-    public Grid(GameObject m, float ct)
-    {
-        meshGrid = m;
-        creationTime = ct;
-    }
-}
-
 public class MeshGenerator : MonoBehaviour
 {
     public Transform player;
@@ -28,10 +16,6 @@ public class MeshGenerator : MonoBehaviour
     public float offsetX;
     public float offsetZ;
 
-    Vector3 startPos;
-
-    Hashtable grids = new Hashtable();
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +23,6 @@ public class MeshGenerator : MonoBehaviour
         offsetZ = Random.Range(0f, 9999f);
 
         mesh = CreateMesh();
-        this.gameObject.transform.position = Vector3.zero;
-        startPos = Vector3.zero;
-
-        float updateTime = Time.realtimeSinceStartup;
 
         for (int x = -xSize; x < xSize; x++)
         {

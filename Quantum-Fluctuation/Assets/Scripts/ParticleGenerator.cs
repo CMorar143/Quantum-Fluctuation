@@ -41,7 +41,7 @@ public class ParticleGenerator : MonoBehaviour
                 particles,
                 new Vector3(
                     transform.position.x,// + Random.Range(-0.3f, 0.3f),
-                    0,
+                    this.gameObject.transform.position.y,
                     transform.position.z
                     ),
                 newParticle.rotation

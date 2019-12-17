@@ -30,7 +30,7 @@ public class GenerateInfinite : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        this.gameObject.transform.position = Vector3.zero;
+        //this.gameObject.transform.position = Vector3.zero;
         startPos = Vector3.zero;
 
         // Timestamp each newly created plane or update the timestamp
@@ -41,7 +41,7 @@ public class GenerateInfinite : MonoBehaviour
         {
             for (int z = -halfPlanesZ; z < halfPlanesZ; z++)
             {
-                Vector3 pos = new Vector3((x * foamSize + startPos.x), 0, (z * foamSize + startPos.z));
+                Vector3 pos = new Vector3((x * foamSize + startPos.x), this.gameObject.transform.position.y, (z * foamSize + startPos.z));
 
                 GameObject p = (GameObject)Instantiate(foam, pos, Quaternion.identity);
 
@@ -70,7 +70,7 @@ public class GenerateInfinite : MonoBehaviour
             {
                 for (int z = -halfPlanesZ; z < halfPlanesZ; z++)
                 {
-                    Vector3 pos = new Vector3((x * foamSize + playerX), 0, (z * foamSize + playerZ));
+                    Vector3 pos = new Vector3((x * foamSize + playerX), this.gameObject.transform.position.y, (z * foamSize + playerZ));
                     string planeName = "PLane_" + ((int)(pos.x)).ToString() + "_" + ((int)(pos.z)).ToString();
 
                     if(!planes.ContainsKey(planeName))
