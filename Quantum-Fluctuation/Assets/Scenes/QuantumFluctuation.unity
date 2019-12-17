@@ -482,6 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf73add7cc0e5f4396be023b734c345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foam: {fileID: 3462318636028865383, guid: e4fd8b55941d6434abe223f288d8fb47, type: 3}
+  player: {fileID: 963194225}
 --- !u!4 &1772467504
 Transform:
   m_ObjectHideFlags: 0

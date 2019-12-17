@@ -35,7 +35,7 @@ public class GenerateInfinite : MonoBehaviour
 
         float updateTime = Time.realtimeSinceStartup;
 
-        for (int x = 0; x < -halfPlanesX; x++)
+        for (int x = -halfPlanesX; x < halfPlanesX; x++)
         {
             for (int z = -halfPlanesz; z < halfPlanesz; z++)
             {
