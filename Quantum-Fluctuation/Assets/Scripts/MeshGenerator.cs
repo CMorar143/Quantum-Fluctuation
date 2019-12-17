@@ -7,9 +7,9 @@ class Grid
     private GameObject meshGrid;
     private float creationTime;
 
-    public Grid(GameObject g, float ct)
+    public Grid(GameObject m, float ct)
     {
-        meshGrid = g;
+        meshGrid = m;
         creationTime = ct;
     }
 }
@@ -39,6 +39,18 @@ public class MeshGenerator : MonoBehaviour
         offsetZ = Random.Range(0f, 9999f);
 
         mesh = CreateMesh();
+        this.gameObject.transform.position = Vector3.zero;
+        startPos = Vector3.zero;
+
+        float updateTime = Time.realtimeSinceStartup;
+
+        for (int x = -xSize; x < xSize; x++)
+        {
+            for (int z = -zSize; z < zSize; z++)
+            {
+                Mesh m = CreateMesh();
+            }
+        }
         
         this.transform.position = player.position + new Vector3(-xSize / 2, -3f, -zSize / 2);
     }
