@@ -2,6 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+class Grid
+{
+    private GameObject meshGrid;
+    private float creationTime;
+
+    public Grid(GameObject g, float ct)
+    {
+        meshGrid = g;
+        creationTime = ct;
+    }
+}
+
 public class MeshGenerator : MonoBehaviour
 {
     public Transform player;
@@ -10,10 +22,15 @@ public class MeshGenerator : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
 
-    public int xSize = 20;
-    public int zSize = 20;
+    public int meshSize = 10;
+    public int xSize = 10;
+    public int zSize = 10;
     public float offsetX;
     public float offsetZ;
+
+    Vector3 startPos;
+
+    Hashtable grids = new Hashtable();
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +38,15 @@ public class MeshGenerator : MonoBehaviour
         offsetX = Random.Range(0f, 9999f);
         offsetZ = Random.Range(0f, 9999f);
 
+        mesh = CreateMesh();
+        
+        this.transform.position = player.position + new Vector3(-xSize / 2, -3f, -zSize / 2);
+    }
+
+    Mesh CreateMesh()
+    {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
 
         for (int v = 0, z = 0; z <= zSize; z++)
@@ -62,7 +85,8 @@ public class MeshGenerator : MonoBehaviour
 
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
-        this.transform.position = player.position + new Vector3(-xSize / 2, -3f, -zSize / 2);
+
+        return mesh;
     }
 
     //private void OnDrawGizmos()
