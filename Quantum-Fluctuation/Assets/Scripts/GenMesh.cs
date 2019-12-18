@@ -40,7 +40,7 @@ public class GenMesh : MonoBehaviour
                 vertices[v] = new Vector3(x, y, z);
                 v++;
 
-                if (y > 1.7)
+                if (y > 1.7 && Random.Range(0, 100) < 40)
                 {
                     GameObject newFluctuation = ParticlePool.GetFluctuation();
                     if (newFluctuation != null)
@@ -81,6 +81,19 @@ public class GenMesh : MonoBehaviour
         mesh.triangles = triangles;
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
+    }
+
+    // Gets called when plane is destroyed
+    private void OnDestroy()
+    {
+        for (int i = 0; i < fluctuations.Count; i++)
+        {
+            if (fluctuations[i] != null)
+            {
+                fluctuations[i].SetActive(false);
+            }
+            fluctuations.Clear();
+        }
     }
 
     // Update is called once per frame
