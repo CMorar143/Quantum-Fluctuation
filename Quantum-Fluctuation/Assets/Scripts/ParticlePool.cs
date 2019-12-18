@@ -12,6 +12,7 @@ public class ParticlePool : MonoBehaviour
     void Start()
     {
         fluctuations = new GameObject[numFluctuations];
+        
         for (int i = 0; i < numFluctuations; i++)
         {
             fluctuations[i] = (GameObject)Instantiate(fluctuation, Vector3.zero, Quaternion.identity);
@@ -19,7 +20,7 @@ public class ParticlePool : MonoBehaviour
         }
     }
 
-    // Looping through the pool of fluctuations
+    // Looping through the pool of trees
     // returning any that are inactive
     static public GameObject GetFluctuation()
     {
@@ -33,5 +34,11 @@ public class ParticlePool : MonoBehaviour
 
         // All fluctuations in the pool are being used
         return null;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

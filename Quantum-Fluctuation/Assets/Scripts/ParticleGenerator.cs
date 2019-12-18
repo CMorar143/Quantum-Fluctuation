@@ -15,18 +15,23 @@ public class ParticleGenerator : MonoBehaviour
         StartCoroutine("CreateParticles");
     }
 
+    private void Update()
+    {
+
+    }
+
     IEnumerator CreateParticles()
     {
         while (true)
         {
             rot = new Vector3(0, 0, Random.Range(-35.0f, 35.0f));
             newParticle.Rotate(rot, Space.Self);
-
+            
             // Pop into existence
-            GameObject p = (GameObject)Instantiate(
+            GameObject p  = (GameObject) Instantiate(
                               particles,
                               new Vector3(
-                                  transform.position.x,
+                                  transform.position.x,// + Random.Range(-0.3f, 0.3f),
                                   this.gameObject.transform.position.y,
                                   transform.position.z
                                   ),
@@ -35,9 +40,9 @@ public class ParticleGenerator : MonoBehaviour
 
             float matterColour = Random.value;
             float antiMatterColour = (matterColour + 0.5f) % 1;
+
             p.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.HSVToRGB(matterColour, 1, 1);
             p.transform.GetChild(1).GetComponent<Renderer>().material.color = Color.HSVToRGB(antiMatterColour, 1, 1);
-            p.transform.position = this.transform.position;
 
             yield return new WaitForSeconds(freq);
         }

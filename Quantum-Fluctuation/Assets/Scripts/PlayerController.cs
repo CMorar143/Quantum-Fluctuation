@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    public float rotSpeed;
+    public float speed = 20.0f;
+    public float rotSpeed = 65.0f;
    
     // Start is called before the first frame update
     void Start()
     {
-        speed = 20.0f;
-        rotSpeed = 65.0f;
+        
     }
 
     // Update is called once per frame
@@ -24,13 +23,13 @@ public class PlayerController : MonoBehaviour
         // Go higher
         if (Input.GetKey(KeyCode.E))
         {
-            transform.position += Vector3.up * Time.deltaTime * (speed/2);
+            transform.position += Vector3.up * Time.deltaTime * speed;
         }
 
         // Go lower
         if (Input.GetKey(KeyCode.F))
         {
-            transform.position += Vector3.up * -Time.deltaTime * (speed/2);
+            transform.position += Vector3.up * -Time.deltaTime * speed;
         }
     }
 }
