@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticlePool : MonoBehaviour
 {
-    static int numFluctuations = 80;
+    private static int numFluctuations = 150;
     public GameObject fluctuation;
     static GameObject[] fluctuations;
 
@@ -34,11 +34,5 @@ public class ParticlePool : MonoBehaviour
 
         // All fluctuations in the pool are being used
         return null;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

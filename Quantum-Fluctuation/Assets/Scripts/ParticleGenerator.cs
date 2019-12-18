@@ -7,7 +7,9 @@ public class ParticleGenerator : MonoBehaviour
     public GameObject particles;
     private Transform newParticle;
     public float freq = 0.8f;
-    Vector3 rot;
+    private Vector3 rot;
+    private float matterColour;
+    private float antiMatterColour;
 
     void Start()
     {
@@ -33,9 +35,9 @@ public class ParticleGenerator : MonoBehaviour
                               newParticle.rotation
                               );
 
-            float matterColour = Random.value;
-            float antiMatterColour = (matterColour + 0.5f) % 1;
-
+            // Randomise colour
+            matterColour = Random.value;
+            antiMatterColour = (matterColour + 0.5f) % 1;
             p.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.HSVToRGB(matterColour, 1, 1);
             p.transform.GetChild(1).GetComponent<Renderer>().material.color = Color.HSVToRGB(antiMatterColour, 1, 1);
 

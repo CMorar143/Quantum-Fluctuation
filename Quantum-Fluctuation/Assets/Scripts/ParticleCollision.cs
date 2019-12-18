@@ -8,8 +8,6 @@ public class ParticleCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "matter")
         {
-            Debug.Log("collision");
-
             // Pop out of existence
             Destroy(transform.parent.gameObject);
         }

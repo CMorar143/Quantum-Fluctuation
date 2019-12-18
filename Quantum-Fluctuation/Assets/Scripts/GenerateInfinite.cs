@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Class for each mesh grid
 class Foam
 {
     public GameObject plane;
@@ -19,13 +20,13 @@ public class GenerateInfinite : MonoBehaviour
     public GameObject foam;
     public GameObject player;
 
-    int foamSize = 10;
-    int halfPlanesX = 7;
-    int halfPlanesZ = 7;
+    public int foamSize = 10;
+    public int halfPlanesX = 7;
+    public int halfPlanesZ = 7;
 
-    Vector3 startPos;
+    private Vector3 startPos;
 
-    Hashtable planes = new Hashtable();
+    private Hashtable planes = new Hashtable();
 
     // Start is called before the first frame update
     private void Start()
@@ -107,7 +108,6 @@ public class GenerateInfinite : MonoBehaviour
 
             // Copy new hashtable contents to the working hashtable
             planes = newFoam;
-
             startPos = player.transform.position;
         }
     }

@@ -4,32 +4,29 @@ using UnityEngine;
 
 public class GenMesh : MonoBehaviour
 {
-    int height = 2;
-    float detailsScale = 5.0f;
-    List<GameObject> fluctuations = new List<GameObject>();
+    public int height = 2;
+    public float detailsScale = 5.0f;
+    private List<GameObject> fluctuations = new List<GameObject>();
     
-    Mesh mesh;
-    Vector3[] vertices;
-    int[] triangles;
-    public int meshSize = 20;
+    private Mesh mesh;
+    private Vector3[] vertices;
+    private int[] triangles;
     public int xSize = 10;
     public int zSize = 10;
-    public float offsetX;
-    public float offsetZ;
 
     // Start is called before the first frame update
     void Start()
     {
         // Create Mesh
+        mesh = new Mesh();
+        GetComponent<MeshFilter>().mesh = mesh;
+        vertices = new Vector3[(xSize + 1) * (zSize + 1)];
         CreateMesh();
     }
 
     void CreateMesh()
     {
-        mesh = new Mesh();
-        GetComponent<MeshFilter>().mesh = mesh;
-        vertices = new Vector3[(xSize + 1) * (zSize + 1)];
-
+        // Loop through all vertices and apply perlin noise
         for (int v = 0, z = 0; z <= zSize; z++)
         {
             for (int x = 0; x <= xSize; x++)
@@ -40,6 +37,8 @@ public class GenMesh : MonoBehaviour
                 vertices[v] = new Vector3(x, y, z);
                 v++;
 
+                // If the field fluctuation is high
+                // Limit to 40% of the time
                 if (y > 1.7 && Random.Range(0, 100) < 40)
                 {
                     GameObject newFluctuation = ParticlePool.GetFluctuation();
@@ -56,8 +55,8 @@ public class GenMesh : MonoBehaviour
             }
         }
 
+        // Create the triangles of the mesh
         triangles = new int[xSize * zSize * 6];
-
         for (int tris = 0, verts = 0, z = 0; z < zSize; z++)
         {
             for (int x = 0; x < xSize; x++)
@@ -83,10 +82,9 @@ public class GenMesh : MonoBehaviour
         mesh.RecalculateNormals();
     }
 
-    // Gets called when plane is destroyed
+    // Gets called when plane is destroyed destroys the particle spawner
     private void OnDestroy()
     {
-        Debug.Log("destroyed");
         for (int i = 0; i < fluctuations.Count; i++)
         {
             if (fluctuations[i] != null)
@@ -95,11 +93,5 @@ public class GenMesh : MonoBehaviour
             }
         }
         fluctuations.Clear();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
