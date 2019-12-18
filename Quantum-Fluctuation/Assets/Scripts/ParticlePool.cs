@@ -34,7 +34,7 @@ public class ParticlePool : MonoBehaviour
 
     // Looping through the pool of particles
     // returning any that are inactive
-    static public GameObject GetParticlePairs()
+    static public GameObject GetParticlePair()
     {
         for (int i = 0; i < numParticles; i++)
         {

@@ -11,7 +11,7 @@ public class ParticleCollision : MonoBehaviour
             Debug.Log("collision");
 
             // Pop out of existence
-            Destroy(transform.parent.gameObject);
+            //Destroy(transform.parent.gameObject);
         }
     }
 }
