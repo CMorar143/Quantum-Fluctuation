@@ -38,6 +38,8 @@ public class GenMesh : MonoBehaviour
 
                 vertices[v] = new Vector3(x, y, z);
                 v++;
+
+                Debug.Log(y);
             }
         }
 
