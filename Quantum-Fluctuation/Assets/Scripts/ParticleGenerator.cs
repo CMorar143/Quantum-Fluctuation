@@ -11,7 +11,7 @@ public class ParticleGenerator : MonoBehaviour
     private float matterColour;
     private float antiMatterColour;
 
-    void Start()
+    private void OnEnable()
     {
         newParticle = this.transform;
         StartCoroutine("CreateParticles");
@@ -22,7 +22,7 @@ public class ParticleGenerator : MonoBehaviour
         while (true)
         {
             rot = new Vector3(0, 0, Random.Range(-35.0f, 35.0f));
-            newParticle.Rotate(rot, Space.Self);
+            newParticle.Rotate(rot);
             
             // Pop into existence
             GameObject p  = (GameObject) Instantiate(
