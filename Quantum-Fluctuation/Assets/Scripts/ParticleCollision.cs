@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ParticleCollision : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    static public bool collided = false;
+
+
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "matter")
         {
-            Debug.Log("collision");
-
+            //Debug.Log("collision");
+            collided = true;
             // Pop out of existence
             //Destroy(transform.parent.gameObject);
         }

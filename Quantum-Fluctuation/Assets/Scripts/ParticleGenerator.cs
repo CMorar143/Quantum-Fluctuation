@@ -37,8 +37,6 @@ public class ParticleGenerator : MonoBehaviour
             float matterColour = Random.value;
             float antiMatterColour = (matterColour + 0.5f) % 1;
 
-
-
             GameObject newParticlePair = ParticlePool.GetParticlePair();
             if (newParticlePair != null)
             {
@@ -47,6 +45,20 @@ public class ParticleGenerator : MonoBehaviour
                 newParticlePair.transform.GetChild(1).GetComponent<Renderer>().material.color = Color.HSVToRGB(antiMatterColour, 1, 1);
                 newParticlePair.SetActive(true);
                 ParticlePairs.Add(newParticlePair);
+                newParticlePair.transform.SetParent(this.transform);
+            }
+
+            if (ParticleCollision.collided)
+            {
+                Debug.Log("collided was true");
+                for (int i = 0; i < ParticlePairs.Count; i++)
+                {
+                    if (ParticlePairs[i] != null)
+                    {
+                        ParticlePairs[i].SetActive(false);
+                    }
+                    ParticlePairs.Clear();
+                }
             }
 
             yield return new WaitForSeconds(freq);

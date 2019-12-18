@@ -338,6 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d0f768c094d6854ebd0c164dad92f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particlePair: {fileID: 7337183472554789571, guid: 3086c4cf84cdd0f49bf76e1bbe1437f6,
+    type: 3}
   fluctuation: {fileID: 3391294569800377569, guid: d2bc98a9c9abd4f48a637d2360e788f7,
     type: 3}
 --- !u!4 &1666293163
