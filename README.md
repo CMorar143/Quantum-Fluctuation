@@ -23,3 +23,25 @@ A rough idea of what the project will look like can be seen in [this video at 3:
 ### Conclusion
 
 Overall I am very excited to get started on this project for two main reasons. Firstly, I am excited to see what I can learn from this project about using the Unity game engine. But secondly and equally as important, I have always had a huge interest in physics and game development and I am very happy to have an opportunity to unify these two passions of mine.
+
+
+## For Grading
+
+### How The Goal Was Achieved
+
+The goal of this project was to develop an procedural generation system to demonstrate the qualities of quantum fluctuation.
+The scene consists of a mesh that was created in code, whereby the y values of the vertices are randomly generated using Perlin noise. The mesh itself is created procedurally so that the players camera never gets close to the edge. This is done by time stamping each generated mesh and regularly checking if the player goes too close to the edge. If the player approaches the edge a new mesh is generated in front and the old one is removed from behind.
+
+The particles are a prefab that gets substantiated by an empty game object (that operates as the spawner). The particles are attached via a spring joint and once they are spawned, an impulse force is applied in the opposite direction of the spring joint.
+
+### What am I Proud of
+
+Most proud of the particles, the way the system demonstrates their interactions. I like the use of the perlin field to calculate which parts of the quantum field are most disturbed. Wherever the field is most disturbed that's where youd find the most fluctuations. This is more realistic than having the fluctuations evenly spread out across the field.
+
+### What Resources Were Useful
+
+The most useful resource for this project was the unity docs.
+
+### Video
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Lxu5-aISQmE&feature/0.jpg)](http://www.youtube.com/watch?v=Lxu5-aISQmE&feature)

@@ -6,7 +6,7 @@ public class GenMesh : MonoBehaviour
 {
     public int height = 2;
     public float detailsScale = 5.0f;
-    private List<GameObject> fluctuations = new List<GameObject>();
+    List<GameObject> fluctuations = new List<GameObject>();
     
     private Mesh mesh;
     private Vector3[] vertices;
@@ -49,6 +49,7 @@ public class GenMesh : MonoBehaviour
                                                   z + this.transform.position.z);
                         newFluctuation.transform.position = pos;
                         newFluctuation.SetActive(true);
+                        //newFluctuation.transform.SetParent(this.transform);
                         fluctuations.Add(newFluctuation);
                     }
                 }
