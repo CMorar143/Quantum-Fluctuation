@@ -31,14 +31,12 @@ public class ParticleGenerator : MonoBehaviour
             GameObject p  = (GameObject) Instantiate(
                               particles,
                               new Vector3(
-                                  transform.position.x + Random.Range(-0.3f, 0.3f),
+                                  transform.position.x,// + Random.Range(-0.3f, 0.3f),
                                   this.gameObject.transform.position.y,
                                   transform.position.z
                                   ),
                               newParticle.rotation
                               );
-
-            transform.rotation = transform.parent.transform.rotation;
 
             float matterColour = Random.value;
             float antiMatterColour = (matterColour + 0.5f) % 1;

@@ -6,6 +6,7 @@ public class GenMesh : MonoBehaviour
 {
     int height = 2;
     float detailsScale = 5.0f;
+    List<GameObject> fluctuations = new List<GameObject>();
     
     Mesh mesh;
     Vector3[] vertices;
@@ -39,7 +40,19 @@ public class GenMesh : MonoBehaviour
                 vertices[v] = new Vector3(x, y, z);
                 v++;
 
-                Debug.Log(y);
+                if (y > 1.7)
+                {
+                    GameObject newFluctuation = ParticlePool.GetFluctuation();
+                    if (newFluctuation != null)
+                    {
+                        Vector3 pos = new Vector3(x + this.transform.position.x,
+                                                  y,
+                                                  z + this.transform.position.z);
+                        newFluctuation.transform.position = pos;
+                        newFluctuation.SetActive(true);
+                        fluctuations.Add(newFluctuation);
+                    }
+                }
             }
         }
 

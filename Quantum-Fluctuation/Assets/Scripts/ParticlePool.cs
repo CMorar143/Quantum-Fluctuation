@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ParticlePool : MonoBehaviour
 {
-    int numFluctuations = 80;
+    static int numFluctuations = 80;
     public GameObject fluctuation;
-    GameObject[] fluctuations;
+    static GameObject[] fluctuations;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,22 @@ public class ParticlePool : MonoBehaviour
             fluctuations[i] = (GameObject)Instantiate(fluctuation, Vector3.zero, Quaternion.identity);
             fluctuations[i].SetActive(false);
         }
+    }
+
+    // Looping through the pool of trees
+    // returning any that are inactive
+    static public GameObject GetFluctuation()
+    {
+        for (int i = 0; i < numFluctuations; i++)
+        {
+            if (!fluctuations[i].activeSelf)
+            {
+                return fluctuations[i];
+            }
+        }
+
+        // All fluctuations in the pool are being used
+        return null;
     }
 
     // Update is called once per frame
