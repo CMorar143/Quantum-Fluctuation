@@ -6,12 +6,11 @@ public class GenMesh : MonoBehaviour
 {
     int height = 2;
     float detailsScale = 5.0f;
-
-    public Transform player;
+    
     Mesh mesh;
     Vector3[] vertices;
     int[] triangles;
-    public int meshSize = 10;
+    public int meshSize = 20;
     public int xSize = 10;
     public int zSize = 10;
     public float offsetX;

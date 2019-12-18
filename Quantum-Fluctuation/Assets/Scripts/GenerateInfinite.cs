@@ -20,8 +20,8 @@ public class GenerateInfinite : MonoBehaviour
     public GameObject player;
 
     int foamSize = 10;
-    int halfPlanesX = 5;
-    int halfPlanesZ = 5;
+    int halfPlanesX = 7;
+    int halfPlanesZ = 7;
 
     Vector3 startPos;
 

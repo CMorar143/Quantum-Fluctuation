@@ -110,3 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6f84ede4b12964aa6620adf51c4b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshSize: 10
+  xSize: 10
+  zSize: 10
+  offsetX: 0
+  offsetZ: 0

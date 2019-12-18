@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7337183472528491824}
   - component: {fileID: 7337183472528491835}
   - component: {fileID: 7337183472528491836}
+  - component: {fileID: 172928988128061412}
   m_Layer: 0
   m_Name: matter
   m_TagString: Untagged
@@ -120,7 +121,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 7337183472554789569}
   m_Anchor: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.07200003, y: 1, z: -0.53999996}
+  m_ConnectedAnchor: {x: 0.06599999, y: 1, z: -0.54}
   serializedVersion: 2
   m_Spring: 15
   m_Damper: 0.2
@@ -133,6 +134,18 @@ SpringJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!122 &172928988128061412
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7337183472528491825}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_Size: 0.06
 --- !u!1 &7337183472554789571
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +240,7 @@ GameObject:
   - component: {fileID: 7337183474538501790}
   - component: {fileID: 7337183474538501791}
   - component: {fileID: 4774996310322660806}
+  - component: {fileID: 7815765192489552248}
   m_Layer: 0
   m_Name: antimatter
   m_TagString: antimatter
@@ -333,7 +347,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 7337183472554789569}
   m_Anchor: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.16499996, y: 1, z: -0.53999996}
+  m_ConnectedAnchor: {x: 0.1663, y: 1, z: -0.54}
   serializedVersion: 2
   m_Spring: 15
   m_Damper: 0.2
@@ -358,3 +372,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd7bff551223be4ba58eb86d9e3efb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!122 &7815765192489552248
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7337183474538501780}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_Size: 0.06
