@@ -86,14 +86,15 @@ public class GenMesh : MonoBehaviour
     // Gets called when plane is destroyed
     private void OnDestroy()
     {
+        Debug.Log("destroyed");
         for (int i = 0; i < fluctuations.Count; i++)
         {
             if (fluctuations[i] != null)
             {
                 fluctuations[i].SetActive(false);
             }
-            fluctuations.Clear();
         }
+        fluctuations.Clear();
     }
 
     // Update is called once per frame

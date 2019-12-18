@@ -15,11 +15,6 @@ public class ParticleGenerator : MonoBehaviour
         StartCoroutine("CreateParticles");
     }
 
-    private void Update()
-    {
-
-    }
-
     IEnumerator CreateParticles()
     {
         while (true)
@@ -31,7 +26,7 @@ public class ParticleGenerator : MonoBehaviour
             GameObject p  = (GameObject) Instantiate(
                               particles,
                               new Vector3(
-                                  transform.position.x,// + Random.Range(-0.3f, 0.3f),
+                                  transform.position.x,
                                   this.gameObject.transform.position.y,
                                   transform.position.z
                                   ),
