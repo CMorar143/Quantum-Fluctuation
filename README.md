@@ -36,11 +36,11 @@ The particles are a prefab that gets substantiated by an empty game object (that
 
 ### What am I Proud of
 
-Most proud of the particles, the way the system demonstrates their interactions. I like the use of the perlin field to calculate which parts of the quantum field are most disturbed. Wherever the field is most disturbed that's where youd find the most fluctuations. This is more realistic than having the fluctuations evenly spread out across the field.
+Most proud of the particles, the way the system demonstrates their interactions. I like the use of the perlin field to calculate which parts of the quantum field are most disturbed. Wherever the field is most disturbed that's where youd find the most fluctuations. This is more realistic than having the fluctuations evenly spread out across the field. I also like the fact that the colours are opposite each other.
 
 ### What Resources Were Useful
 
-The most useful resource for this project was the unity docs.
+The most useful resource for this project was the unity docs. [This](https://youtu.be/dycHQFEz8VI) was a helpful videos for generating infinite terrain.
 
 ### Video
 
