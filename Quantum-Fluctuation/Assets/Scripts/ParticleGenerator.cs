@@ -20,17 +20,6 @@ public class ParticleGenerator : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "matter")
-        {
-            Debug.Log("collision");
-
-            // Pop out of existence
-            Destroy(transform.parent.gameObject);
-        }
-    }
-
     IEnumerator CreateParticles()
     {
         while (true)
@@ -39,17 +28,25 @@ public class ParticleGenerator : MonoBehaviour
             newParticle.Rotate(rot, Space.Self);
             
             // Pop into existence
-            Instantiate(
-                particles,
-                new Vector3(
-                    transform.position.x + Random.Range(-0.3f, 0.3f),
-                    this.gameObject.transform.position.y,
-                    transform.position.z
-                    ),
-                newParticle.rotation
-            );
+            GameObject p  =  Instantiate(
+                              particles,
+                              new Vector3(
+                                  transform.position.x + Random.Range(-0.3f, 0.3f),
+                                  this.gameObject.transform.position.y,
+                                  transform.position.z
+                                  ),
+                              newParticle.rotation
+                              );
 
             transform.rotation = transform.parent.transform.rotation;
+
+            float matterColour = Random.value;
+            float antiMatterColour = (matterColour + 0.5f) % 1;
+
+
+            //p.GetComponentInChildren<Renderer>().material.color = Color.HSVToRGB(Random.value, 1, 1);
+            p.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.HSVToRGB(matterColour, 1, 1);
+            p.transform.GetChild(1).GetComponent<Renderer>().material.color = Color.HSVToRGB(antiMatterColour, 1, 1);
 
             yield return new WaitForSeconds(freq);
         }
