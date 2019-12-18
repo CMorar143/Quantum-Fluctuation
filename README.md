@@ -44,4 +44,4 @@ The most useful resource for this project was the unity docs.
 
 ### Video
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Lxu5-aISQmE&feature/0.jpg)](http://www.youtube.com/watch?v=Lxu5-aISQmE&feature)
+[![Youtube video](http://img.youtube.com/vi/Lxu5-aISQmE&feature/0.jpg)](http://www.youtube.com/watch?v=Lxu5-aISQmE&feature)

@@ -34,7 +34,7 @@ public class ParticleGenerator : MonoBehaviour
                                   ),
                               newParticle.rotation
                               );
-
+            Debug.Log("popping into");
             // Randomise colour
             matterColour = Random.value;
             antiMatterColour = (matterColour + 0.5f) % 1;
